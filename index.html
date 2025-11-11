@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Alamo City</title>
+    <style>
+      :root{ --navy:#001f3f; --card-bg:#0b1624aa; }
+      body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--navy); color:#fff; }
+      .wrap { display:flex; align-items:center; justify-content:center; min-height:100vh; padding:3rem 1rem; }
+      .card { width:100%; max-width:980px; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.45); }
+      a { color:#bfe1ff; text-decoration:none; }
+
+      /* Header with background image */
+      .hero {
+        display:flex; gap:2rem; align-items:center; padding:2rem; background-image:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("assets/header.webp");
+        background-size:cover; background-position:center; color:#fff;
+      }
+      .hero h1 { margin:0 0 .5rem 0; }
+      .cta { display:flex; gap:1rem; margin-top:1rem; }
+      .btn { padding:.6rem 1rem; border-radius:8px; border:0; cursor:pointer; font-weight:600; }
+      .btn-primary { background:#ff7f50; color:white; }
+      .btn-secondary { background:transparent; color:#bfe1ff; border:1px solid rgba(191,225,255,0.12); }
+
+      .content { display:grid; grid-template-columns:1fr 1fr; gap:1rem; padding:1.25rem; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+      .section { padding:1rem; border-radius:8px; background:rgba(255,255,255,0.02); color:#f3f7fb; }
+      .meta { font-size:.95rem; color:#d9e9ff; margin-top:.5rem; }
+      footer { margin-top:0; font-size:.9rem; color:#d1e7ff; text-align:center; padding:1rem; background:rgba(0,0,0,0.1); }
+
+      @media (max-width:720px){ .hero { flex-direction:column; padding:1.25rem; } .content { grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <main class="card">
+        <header class="hero">
+          <div style="flex:1">
+            <h1>San Antonio Icons</h1>
+            <p class="meta">Celebrating the legacy of the Spurs and the historic Alamo</p>
+            <div class="cta">
+              <a href="#spurs"><button class="btn btn-primary">Explore Spurs</button></a>
+              <a href="#alamo"><button class="btn btn-secondary">Visit Alamo</button></a>
+            </div>
+          </div>
+          <div style="width:160px; text-align:center; color:#fff">
+            <div style="font-size:3rem; font-weight:700;">🏀</div>
+            <div style="margin-top:.5rem; font-weight:600;">The Alamo</div>
+          </div>
+        </header>
+
+        <section id="spurs" class="content">
+          <div class="section">
+            <h2>San Antonio Spurs</h2>
+            <p class="meta">A dynasty built on teamwork, excellence, and the pursuit of greatness</p>
+            <p>The San Antonio Spurs represent one of the most successful franchises in NBA history. Known for their fundamental approach to basketball and team-first mentality, the Spurs have built a culture of sustained excellence under Coach Gregg Popovich.</p>
+
+            <ul>
+              <li><strong>5 NBA Championships</strong> — 1999, 2003, 2005, 2007, 2014</li>
+              <li><strong>Legendary Players</strong> — Tim Duncan, Tony Parker, Manu Ginóbili, David Robinson</li>
+              <li><strong>Founded</strong> — Established in 1967 as the Dallas Chaparrals</li>
+              <li><strong>Coach</strong> — Gregg Popovich (most wins in NBA history)</li>
+            </ul>
+
+            <div style="margin-top:1rem;">
+              <h4>Browse rosters by year</h4>
+              <div id="yearButtons" style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem;">
+                <!-- Year buttons added by JS fallback -->
+              </div>
+
+              <div id="roster" style="margin-top:1rem; padding:1rem; background:rgba(255,255,255,0.02); border-radius:8px;">
+                <em>Select a year to view the roster.</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>San Antonio Spurs Basketball</h3>
+            <p class="meta">A Legacy of Excellence</p>
+            <p>From the "Twin Towers" era to the "Big Three," the Spurs have consistently demonstrated that great teams are built on trust, sacrifice, and unwavering commitment to each other.</p>
+          </div>
+        </section>
+
+        <section id="eras" style="padding:1.25rem;">
+          <div class="section" style="background:rgba(255,255,255,0.02);">
+            <h2>Spurs: Historical Eras</h2>
+            <p class="meta">A brief historical overview of the key roster eras — click a heading to expand details.</p>
+
+            <div style="display:grid; grid-template-columns:repeat(1,1fr); gap:0.5rem; margin-top:1rem;">
+               <details style="background:rgba(0,0,0,0.06); padding:.75rem; border-radius:8px;" open>
+                 <summary style="cursor:pointer; font-weight:700;">The Gervin / Early NBA Era (Late 1970s – mid-1980s)</summary>
+                 <div style="margin-top:.5rem; color:#d9e9ff;">
+                  <p>George Gervin, nicknamed “The Iceman”, was the franchise’s premier star of this era. Gervin's scoring prowess, graceful style, and signature finger roll made him an offensive marvel. The Spurs' move from the ABA to the NBA in 1976 transformed the franchise into a national competitor, and while championships eluded the team in this period, the groundwork was laid for future success.</p>
+                  <p style="margin-top:.5rem;">Notable elements:</p>
+                  <ul>
+                    <li>George Gervin — franchise scoring leader and cultural icon.</li>
+                    <li>ABA→NBA transition (1976) — important organizational change.</li>
+                    <li>Fan culture beginnings in San Antonio and growth of local identity.</li>
+                  </ul>
+                  <div style="display:flex; gap:.5rem; margin-top:.75rem; flex-wrap:wrap;">
+                    <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/76804.png" alt="Gervin" style="height:80px; border-radius:6px;"/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/George_Gervin_ABA.jpeg/250px-George_Gervin_ABA.jpeg" alt="Gervin ABA" style="height:80px; border-radius:6px;"/>
+                    <img src="https://www.nasljerseys.com/images/ABA/Spurs/Spurs%2074-75%20Home%20Team.jpg" alt="Spurs 74-75" style="height:80px; border-radius:6px;"/>
+                    <img src="https://img.texasmonthly.com/2023/01/spurs-texas-icons-hero.jpg?auto=compress&crop=faces&fit=fit&fm=jpg&h=0&ixlib=php-3.3.1&q=45&w=1250" alt="Spurs history" style="height:80px; border-radius:6px;"/>
+                  </div>
+                </div>
+               </details>
+ 
+               <details style="background:rgba(0,0,0,0.06); padding:.75rem; border-radius:8px;">
+                 <summary style="cursor:pointer; font-weight:700;">Twin Towers & Pre-Dynasty Build (Late 1980s – late 1990s)</summary>
+                 <div style="margin-top:.5rem; color:#d9e9ff;">
+                  <p>David Robinson emerged as a dominant defensive presence and community leader. His career with the Spurs set the defensive tone for the franchise. The selection of Tim Duncan with the #1 overall pick in 1997 transformed the Spurs' ceiling — pairing Duncan's fundamentals with Robinson's presence created the "Twin Towers" era that led to the 1999 championship.</p>
+                  <p style="margin-top:.5rem;">Notable elements:</p>
+                  <ul>
+                    <li>David Robinson — two-time Defensive Player of the Year and team anchor.</li>
+                    <li>Tim Duncan drafted #1 overall (1997) — franchise cornerstone.</li>
+                    <li>1999 championship — first NBA title for the Spurs.</li>
+                  </ul>
+                  <div style="display:flex; gap:.5rem; margin-top:.75rem; flex-wrap:wrap;">
+                    <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/764.png" alt="David Robinson" style="height:80px; border-radius:6px;"/>
+                    <img src="https://s.hdnux.com/photos/42/26/15/9003863/4/1920x0.jpg" alt="Twin Towers" style="height:80px; border-radius:6px;"/>
+                  </div>
+                </div>
+               </details>
+ 
+               <details style="background:rgba(0,0,0,0.06); padding:.75rem; border-radius:8px;">
+                 <summary style="cursor:pointer; font-weight:700;">The “Big Three” Dynasty Era (Late 1990s – mid-2010s)</summary>
+                 <div style="margin-top:.5rem; color:#d9e9ff;">
+                  <p>The "Big Three" of Tim Duncan, Tony Parker, and Manu Ginóbili defined an era of sustained excellence. Their complementary skills — Duncan's fundamentals, Parker's quickness and playmaking, and Ginóbili's creativity — allowed the Spurs to execute a team-first system that minimized ego and maximized wins. Championships in 2003, 2005, 2007, and 2014 reflected the organization's ability to draft, develop, and surround stars with high-character role players.</p>
+                  <p style="margin-top:.5rem;">Notable elements:</p>
+                  <ul>
+                    <li>Emphasis on defense and ball movement.</li>
+                    <li>Smart drafting and international scouting (e.g., Ginóbili).</li>
+                    <li>Multiple championships and consistent playoff success.</li>
+                  </ul>
+                  <div style="display:flex; gap:.5rem; margin-top:.75rem; flex-wrap:wrap;">
+                    <img src="https://www.usatoday.com/gcdn/-mm-/1660540fc50ff0710bc2cdf72add2ca716081e42/c%3D544-0-2877-3104/local/-/media/USATODAY/USATODAY/2014/05/21//1400648600000-USATSI-7914672.jpg" alt="Big Three" style="height:80px; border-radius:6px;"/>
+                    <img src="https://hoopscoach.wordpress.com/wp-content/uploads/2020/11/2003spursc_374x225.jpg" alt="2003 Champs" style="height:80px; border-radius:6px;"/>
+                  </div>
+                </div>
+               </details>
+ 
+               <details style="background:rgba(0,0,0,0.06); padding:.75rem; border-radius:8px;">
+                 <summary style="cursor:pointer; font-weight:700;">Post-Duncan Transition & Rebuild (Mid-2010s – 2025)</summary>
+                 <div style="margin-top:.5rem; color:#d9e9ff;">
+                  <p>Following the retirement of Tim Duncan (2016) and later transitions of Parker and Ginóbili, the Spurs emphasized youth, development and smart asset management. The 2023 draft selection of Victor Wembanyama signalled a new era, with the franchise betting on transcendent young talent to return the club to contention.</p>
+                  <p style="margin-top:.5rem;">Notable elements:</p>
+                  <ul>
+                    <li>Post-Duncan rebuild focused on drafts and international scouting.</li>
+                    <li>Victor Wembanyama drafted in 2023 — potential franchise cornerstone.</li>
+                    <li>Continuing Spurs culture: player development and team-first identity.</li>
+                  </ul>
+                  <div style="display:flex; gap:.5rem; margin-top:.75rem; flex-wrap:wrap;">
+                    <img src="https://wp.clutchpoints.com/wp-content/uploads/2023/08/Spurs-greatest-teams-best-teams-history-rankings-Kawhi-Leonard-Tim-Duncan-David-Robinson-Tony-Parker-Manu-Ginobili.jpg?w=1200" alt="Post-Duncan" style="height:80px; border-radius:6px;"/>
+                    <img src="https://fadeawayworld.net/wp-content/uploads/2024/08/8c3b2339-9899-4903-8591-6781da85c4e9.jpg" alt="Wembanyama" style="height:80px; border-radius:6px;"/>
+                  </div>
+                </div>
+               </details>
+            </div>
+
+            <p style="margin-top:1rem; color:#d9e9ff;">Tip: expand an era to read a short summary, or use the roster viewer above to jump to a specific year.</p>
+          </div>
+        </section>
+
+        <section id="alamo" style="padding:1.25rem; background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));">
+          <div class="section">
+            <h2>The Alamo</h2>
+            <p class="meta">A symbol of Texas liberty and the brave men who fought for freedom</p>
+            <p>The Alamo stands as one of the most iconic landmarks in American history. This 18th-century mission became the site of a pivotal battle in 1836 where Texian defenders stood against overwhelming odds in the fight for independence.</p>
+
+            <ul>
+              <li><strong>Shrine of Texas Liberty</strong></li>
+              <li><strong>Originally founded</strong> — 1718 as a Spanish mission</li>
+              <li><strong>Battle of the Alamo</strong> — Pivotal 1836 battle during Texas Revolution</li>
+              <li><strong>UNESCO Heritage</strong> — Part of San Antonio Missions World Heritage Site</li>
+              <li><strong>Remember the Alamo</strong> — Symbol of courage and sacrifice for independence</li>
+            </ul>
+
+            <p class="meta"><strong>Address:</strong> 300 Alamo Plaza, San Antonio, TX 78205</p>
+          </div>
+        </section>
+
+        <footer>
+          Made with ❤️ for San Antonio
+        </footer>
+      </main>
+    </div>
+
+    <!-- Rosters script -->
+    <script>
+      (function(){
+        const rosters = {
+          "1999": { note: "First Spurs championship (Duncan/Robinson).", players: ["Tim Duncan (C/F)", "David Robinson (C)", "Avery Johnson (PG)", "Sean Elliott (SG/SF)", "Mario Elie (SG)", "Jaren Jackson (F)"] },
+          "2000": { note: "Post-championship core remains.", players: ["Tim Duncan", "David Robinson", "Avery Johnson", "Sean Elliott", "Danny Ferry", "Malik Rose"] },
+          "2001": { note: "Transition toward Duncan-led era.", players: ["Tim Duncan", "David Robinson", "Sean Elliott", "David Wingate", "Malik Rose", "Speedy Claxton"] },
+          "2002": { note: "Building around Duncan and Robinson.", players: ["Tim Duncan", "David Robinson", "Tony Parker (rookie)", "Antonio Daniels", "Sean Elliott", "Malik Rose"] },
+          "2003": { note: "Championship — Duncan, Parker, Ginóbili era begins.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "David Robinson", "Bruce Bowen", "Rasho Nesterovic"] },
+          "2004": { note: "Core trio grows in cohesion.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Bruce Bowen", "Rasho Nesterovic", "Malik Rose"] },
+          "2005": { note: "Championship year — Big Three in full effect.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Bruce Bowen", "Robert Horry", "Michael Finley"] },
+          "2006": { note: "Sustained elite performance.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Bruce Bowen", "Fabricio Oberto", "Eddie Jones"] },
+          "2007": { note: "Another title for the core Spurs.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Bruce Bowen", "Tony Parker", "Robert Horry"] },
+          "2008": { note: "Late Big Three era continues.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Bruce Bowen", "Fabricio Oberto", "Roger Mason"] },
+          "2009": { note: "Veteran core with rising role players.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Richard Jefferson", "Antonio McDyess", "Fabricio Oberto"] },
+          "2010": { note: "Still competitive; consistent system.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Richard Jefferson", "DeJuan Blair", "Ginóbili"] },
+          "2011": { note: "Spurs adapt to new NBA styles.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Richard Jefferson", "DeJuan Blair", "Tiago Splitter"] },
+          "2012": { note: "Patty Mills and newer role players join.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Tiago Splitter", "Patty Mills", "Danny Green"] },
+          "2013": { note: "Strong veteran leadership ahead of 2014 run.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Danny Green", "Tiago Splitter", "Kawhi Leonard (emerging)"] },
+          "2014": { note: "Championship — Kawhi Leonard rises to prominence.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Kawhi Leonard", "Danny Green", "Tiago Splitter"] },
+          "2015": { note: "Post-2014 core with veterans continuing.", players: ["Tim Duncan", "Tony Parker", "Manu Ginóbili", "Kawhi Leonard", "LaMarcus Aldridge", "Danny Green"] },
+          "2016": { note: "Duncan retires; transition begins.", players: ["Kawhi Leonard", "Tony Parker", "LaMarcus Aldridge", "Danny Green", "Pau Gasol (brief)", "Patty Mills"] },
+          "2017": { note: "Post-Duncan era with Kawhi leading.", players: ["Kawhi Leonard", "LaMarcus Aldridge", "Pau Gasol", "Tony Parker", "Patty Mills", "Derrick White (rookie)"] },
+          "2018": { note: "Roster changes; DeRozan era begins later.", players: ["Kawhi Leonard", "LaMarcus Aldridge", "Danny Green", "Dejounte Murray (emerging)", "Derrick White"] },
+          "2019": { note: "Re-tooling and youth development.", players: ["Dejounte Murray", "Derrick White", "Keldon Johnson (rookie)", "DeMar DeRozan (joined 2018)", "LaMarcus Aldridge"] },
+          "2020": { note: "Youth and core building continues.", players: ["DeMar DeRozan", "Dejounte Murray", "Derrick White", "Keldon Johnson", "Jakob Poeltl"] },
+          "2021": { note: "Rebuilding with draft assets.", players: ["DeMar DeRozan", "Derrick White", "Keldon Johnson", "Jakob Poeltl", "Lonnie Walker IV"] },
+          "2022": { note: "More youth and role players.", players: ["DeMar DeRozan", "Derrick White", "Keldon Johnson", "Jakob Poeltl", "Dejounte Murray"] },
+          "2023": { note: "Victor Wembanyama drafted — new era begins.", players: ["Victor Wembanyama", "Dejounte Murray", "Keldon Johnson", "Jeremy Sochan", "Tre Jones"] },
+          "2024": { note: "Wembanyama's rookie season development.", players: ["Victor Wembanyama", "Dejounte Murray", "Jeremy Sochan", "Keldon Johnson", "Tre Jones"] },
+          "2025": { note: "Continuing the rebuild around Wembanyama.", players: ["Victor Wembanyama", "Dejounte Murray", "Jeremy Sochan", "Keldon Johnson", "Zach Collins"] }
+        };
+
+        const yearButtons = document.getElementById('yearButtons');
+        const rosterEl = document.getElementById('roster');
+
+        // create buttons for each year from 1999 to 2025
+        const years = Object.keys(rosters).sort((a,b)=>+a-+b);
+        years.forEach(year=>{
+          const btn = document.createElement('button');
+          btn.className = 'btn';
+          btn.style.background = 'transparent';
+          btn.style.border = '1px solid rgba(191,225,255,0.08)';
+          btn.style.color = '#bfe1ff';
+          btn.style.padding = '.4rem .6rem';
+          btn.style.borderRadius = '6px';
+          btn.textContent = year;
+          btn.onclick = ()=> showRoster(year);
+          yearButtons.appendChild(btn);
+        });
+
+        function showRoster(year){
+          const r = rosters[year];
+          rosterEl.innerHTML = '<h4>' + year + ' roster</h4>' +
+            '<p style="margin-top:0; color:#d9e9ff;">' + (r.note||'') + '</p>' +
+            '<ul style="margin-top:.5rem;">' + r.players.map(p => '<li>' + p + '</li>').join('') + '</ul>';
+          // highlight the active button
+          Array.from(yearButtons.children).forEach(b => b.style.opacity = (b.textContent===year? '1' : '0.6'));
+        }
+      })();
+    </script>
+  </body>
+</html>
