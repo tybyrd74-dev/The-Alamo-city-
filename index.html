@@ -5,32 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Alamo City</title>
     <style>
-      :root{ --navy:#001f3f; --card-bg:#0b1624aa; }
-      body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--navy); color:#fff; }
-      .wrap { display:flex; align-items:center; justify-content:center; min-height:100vh; padding:3rem 1rem; }
-      .card { width:100%; max-width:980px; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.45); }
-      a { color:#bfe1ff; text-decoration:none; }
+      :root{ --navy:#002b5c; --card-bg:rgba(11,22,36,0.88); --accent:#6fc3ff; --link:#cfeeff; --link-hover:#ffffff; }
+      body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#08316a,#002b5c); color:#fff; }
+      .wrap { display:flex; align-items:flex-start; justify-content:center; min-height:100vh; padding:3rem 1rem; }
+      .card { width:100%; max-width:980px; border-radius:12px; overflow:hidden; box-shadow:0 8px 28px rgba(0,0,0,0.45); background:var(--card-bg); }
+
+      a { color:var(--link); text-decoration:underline; text-decoration-color:rgba(207,238,255,0.25); }
+      a:hover { color:var(--link-hover); text-decoration-color:rgba(207,238,255,0.9); }
 
       /* Header with background image */
       .hero {
-        display:flex; gap:2rem; align-items:center; padding:2rem; background-image:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("assets/header.webp");
+        display:flex; gap:2rem; align-items:center; padding:2rem; background-image:linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url("assets/header.webp");
         background-size:cover; background-position:center; color:#fff;
       }
       .hero h1 { margin:0 0 .5rem 0; }
       .cta { display:flex; gap:1rem; margin-top:1rem; }
       .btn { padding:.6rem 1rem; border-radius:8px; border:0; cursor:pointer; font-weight:600; }
       .btn-primary { background:#ff7f50; color:white; }
-      .btn-secondary { background:transparent; color:#bfe1ff; border:1px solid rgba(191,225,255,0.12); }
+      .btn-secondary { background:transparent; color:var(--link); border:1px solid rgba(191,225,255,0.12); }
 
       .content { display:grid; grid-template-columns:1fr 1fr; gap:1rem; padding:1.25rem; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
       .section { padding:1rem; border-radius:8px; background:rgba(255,255,255,0.02); color:#f3f7fb; }
       .meta { font-size:.95rem; color:#d9e9ff; margin-top:.5rem; }
       footer { margin-top:0; font-size:.9rem; color:#d1e7ff; text-align:center; padding:1rem; background:rgba(0,0,0,0.1); }
 
-      @media (max-width:720px){ .hero { flex-direction:column; padding:1.25rem; } .content { grid-template-columns:1fr; } }
+      /* Top navigation */
+      .topnav { display:flex; gap:1rem; justify-content:flex-end; align-items:center; padding:0.6rem 1rem; background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+      .topnav a { color:var(--link); padding:.35rem .6rem; border-radius:6px; }
+      .topnav a:hover { background:rgba(255,255,255,0.02); color:var(--link-hover); }
+
+      @media (max-width:720px){ .hero { flex-direction:column; padding:1.25rem; } .content { grid-template-columns:1fr; } .topnav { justify-content:center; } }
     </style>
   </head>
   <body>
+    <div class="topnav">
+      <a href="#spurs">Spurs</a>
+      <a href="#eras">Eras</a>
+      <a href="#alamo">Alamo</a>
+    </div>
     <div class="wrap">
       <main class="card">
         <header class="hero">
